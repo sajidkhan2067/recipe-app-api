@@ -16,4 +16,4 @@ python manage.py collectstatic --noinput
 
 # Start Django application and keep the container running
 echo "Starting application..."
-exec gunicorn --bind 0.0.0.0:8000 app.wsgi:application --workers=4 --threads=2 --timeout=120
+uwsgi --socket :9000 --workers 4 --master --enable-threads --module app.wsgi
