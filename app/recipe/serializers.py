@@ -103,7 +103,8 @@ class RecipeImageSerializer(serializers.ModelSerializer):
         model = Recipe
         fields = ['id', 'image']
         read_only_fields = ['id']
-        
+
+
 class TagSerializer(serializers.ModelSerializer):
     """Serializer for tag objects."""
     class Meta:
